@@ -13,7 +13,7 @@ export async function getReview(name: string) {
 		content,
 		data: { title, date, image },
 	} = matter(text);
-	const html = marked(content, { mangle: true, headerIds: false });
+	const html = marked(content);
 	return { title, date, image, html };
 }
 
