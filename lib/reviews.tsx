@@ -11,10 +11,10 @@ export async function getReview(name: string) {
 	const text = await readFile(`./content/reviews/${name}.md`, "utf-8");
 	const {
 		content,
-		data: { title, date, image },
+		data: { title, date, image, slug },
 	} = matter(text);
 	const html = marked(content);
-	return { title, date, image, html };
+	return { slug, title, date, image, html };
 }
 
 export async function getReviews() {
