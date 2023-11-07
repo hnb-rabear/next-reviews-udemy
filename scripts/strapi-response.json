@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "attributes": {
+        "slug": "hollow-knight",
+        "title": "Hollow Knight",
+        "subtitle": "A Sublime Journey Through an Enigmatic World",
+        "publishedAt": "2023-05-16T11:00:00.000Z",
+        "body": "__Hollow Knight__, developed by _Team Cherry_, is an indie gem that has captivated the hearts of gamers since its release. With its atmospheric exploration, challenging gameplay, and beautifully crafted world, it offers an experience that is both haunting and enchanting. Prepare to embark on an unforgettable adventure in the dark and mysterious kingdom of Hallownest.\n\n### Gameplay\nHollow Knight boasts a meticulously designed 2D metroidvania gameplay that strikes a perfect balance between accessibility and difficulty. Players control a nameless knight who wields a nail as a weapon, venturing into sprawling interconnected environments teeming with perilous enemies and intricate platforming challenges. The combat mechanics are tight and responsive, rewarding skillful timing and strategic approaches. As you progress, you'll encounter numerous upgrades and abilities that enhance your exploration and combat prowess, adding depth to the gameplay and encouraging further exploration.\n\n### World Design\nHallownest is an atmospheric and visually stunning world, brimming with a hauntingly beautiful art style. From the desolate ruins to the eerie fungal forests and ancient cities, each area is exquisitely detailed and filled with a sense of melancholic wonder. The world is interconnected, with hidden paths, secrets, and shortcuts that encourage thorough exploration. Combined with a haunting musical score, the game effortlessly immerses you in its ethereal ambiance, making every step a captivating experience.\n\n### Story and Lore\nHollow Knight weaves a rich and enigmatic narrative that is gradually unveiled as you delve deeper into Hallownest. The lore is delivered subtly through cryptic dialogue, environmental storytelling, and encounters with intriguing characters, allowing players to piece together the history and mythology of this crumbling kingdom. The game offers a sense of discovery and wonder, rewarding those who take the time to uncover its hidden secrets.\n\n### Challenge and Progression\nWhile Hollow Knight presents a fair challenge, it can be quite demanding, testing your skills and perseverance. From tough boss battles to intricate platforming sequences, the game keeps you on your toes and pushes you to improve. However, with every defeat comes a lesson learned, making each victory all the more satisfying. The sense of progression is palpable as you acquire new abilities, confront stronger adversaries, and unveil the secrets of Hallownest.\n\n### Conclusion\nHollow Knight is an exceptional game that shines through its atmospheric world, challenging gameplay, and captivating storytelling. Its combination of tight controls, immersive visuals, and haunting soundtrack creates an experience that is both beautiful and haunting. If you're a fan of metroidvanias or simply seeking an adventure that will stay with you long after the credits roll, Hollow Knight is an absolute must-play. Prepare to lose yourself in the depths of Hallownest and discover a truly unforgettable journey.\n",
+        "image": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "url": "/uploads/hollow_knight_da5257a59c.jpg"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 1
+    }
+  }
+}

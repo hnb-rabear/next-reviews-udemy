@@ -3,12 +3,12 @@ import Heading from "@/app/components/Heading";
 import { getReview, getSlugs } from "@/lib/reviews";
 import ShareLinkButton from "@/app/components/ShareLinkButton";
 
-export async function generateStaticParams() {
-	const slugs = await getSlugs();
-	return slugs.map((slug) => ({
-		slug,
-	}));
-}
+// export async function generateStaticParams() {
+// 	const slugs = await getSlugs();
+// 	return slugs.map((slug) => ({
+// 		slug,
+// 	}));
+// }
 
 export async function generateMetadata(props) {
 	const review = await getReview(props.params.slug);
