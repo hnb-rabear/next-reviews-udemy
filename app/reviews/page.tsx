@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Heading from "@/app/components/Heading";
 import { getReviews } from "@/lib/reviews";
 
@@ -21,13 +22,13 @@ const ReviewsPage = async () => {
 							href={`/reviews/${review.slug}`}
 							className="flex flex-col gap-2 "
 						>
-							<img
+							<Image
 								src={review.image}
 								alt={review.title}
 								width={320}
 								height={180}
 								className="rounded-t sm:rounded-l sm:rounded-t-none"
-							></img>
+							></Image>
 							<p className="font-orbitron py-1 text-center">
 								{review.title}
 							</p>

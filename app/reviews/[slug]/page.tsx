@@ -2,13 +2,14 @@ import { readFile } from "node:fs/promises";
 import Heading from "@/app/components/Heading";
 import { getReview, getSlugs } from "@/lib/reviews";
 import ShareLinkButton from "@/app/components/ShareLinkButton";
+import Image from "next/image";
 
-// export async function generateStaticParams() {
-// 	const slugs = await getSlugs();
-// 	return slugs.map((slug) => ({
-// 		slug,
-// 	}));
-// }
+export async function generateStaticParams() {
+	const slugs = await getSlugs();
+	return slugs.map((slug) => ({
+		slug,
+	}));
+}
 
 export async function generateMetadata(props) {
 	const review = await getReview(props.params.slug);
@@ -26,7 +27,7 @@ const ReviewPage = async (props) => {
 				<p className="italic text-sm">{review.date}</p>
 				<ShareLinkButton />
 			</div>
-			<img
+			<Image
 				src={review.image}
 				alt={review.title}
 				width={640}
@@ -34,7 +35,7 @@ const ReviewPage = async (props) => {
 				className="mb-2 rounded pt-2"
 			/>
 			<article
-				dangerouslySetInnerHTML={{ __html: review.html }}
+				dangerouslySetInnerHTML={{ __html: review.body }}
 				className="prose prose-slate max-w-screen-sm"
 			/>
 		</>
