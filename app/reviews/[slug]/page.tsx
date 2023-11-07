@@ -19,10 +19,13 @@ export async function generateMetadata(props) {
 }
 
 const ReviewPage = async (props) => {
-	const review = await getReview(props.params.slug);
+	const slug = props.params.slug;
+	console.log(`[Rendering] ${slug}`);
+	const review = await getReview(slug);
 	return (
 		<>
 			<Heading>{review.title}</Heading>
+			<p className="font-semibold pb-3">{review.subtitle}</p>
 			<div className="flex gap-3 items-baseline">
 				<p className="italic text-sm">{review.date}</p>
 				<ShareLinkButton />

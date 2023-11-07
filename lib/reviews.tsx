@@ -3,10 +3,10 @@ import qs from "qs";
 
 const CMS_URL = "http://localhost:1337";
 
-export async function getFeaturedReview() {
-	var reviews = getReviews();
-	return await getReview(reviews[0]);
-}
+// export async function getFeaturedReview() {
+// 	var reviews = getReviews(1);
+// 	return await getReview(reviews[0]);
+// }
 
 // export async function getReview(name: string) {
 // 	const text = await readFile(`./content/reviews/${name}.md`, "utf-8");
@@ -48,13 +48,13 @@ export async function getReview(slug) {
 	};
 }
 
-export async function getReviews() {
+export async function getReviews(pageSize) {
 	const { data } = await fetchReviews({
 		fields: ["slug", "title", "subtitle", "publishedAt"],
 		populate: { image: { fields: ["url"] } },
 		sort: ["publishedAt:desc"],
 		pagination: {
-			pageSize: 10,
+			pageSize: pageSize,
 		},
 	});
 	const results = data.map(toReview);
