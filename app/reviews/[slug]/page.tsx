@@ -4,12 +4,15 @@ import { getReview, getSlugs } from "@/lib/reviews";
 import ShareLinkButton from "@/app/components/ShareLinkButton";
 import Image from "next/image";
 
-export async function generateStaticParams() {
-	const slugs = await getSlugs();
-	return slugs.map((slug) => ({
-		slug,
-	}));
-}
+// export const dynamicParams = true;
+export const dynamic = "force-dynamic";
+
+// export async function generateStaticParams() {
+// 	const slugs = await getSlugs();
+// 	return slugs.map((slug) => ({
+// 		slug,
+// 	}));
+// }
 
 export async function generateMetadata(props) {
 	const review = await getReview(props.params.slug);
@@ -20,7 +23,7 @@ export async function generateMetadata(props) {
 
 const ReviewPage = async (props) => {
 	const slug = props.params.slug;
-	console.log(`[Rendering] ${slug}`);
+	console.log(`[ReviewPage] Rendering ${slug}`);
 	const review = await getReview(slug);
 	return (
 		<>

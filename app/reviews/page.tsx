@@ -3,7 +3,7 @@ import Image from "next/image";
 import Heading from "@/app/components/Heading";
 import { getReviews } from "@/lib/reviews";
 
-export const dynamicParams = true;
+export const dynamic = "force-dynamic";
 
 export const metadata = {
 	title: "Reviews",
@@ -12,7 +12,9 @@ export const metadata = {
 const ReviewsPage = async () => {
 	const reviews = await getReviews(10);
 	console.log(
-		`[Rendering] ${reviews.map((review) => review.slug).join(", ")}`
+		`[ReviewPage] Rendering ${reviews
+			.map((review) => review.slug)
+			.join(", ")}`
 	);
 
 	return (

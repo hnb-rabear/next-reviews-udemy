@@ -3,10 +3,14 @@ import Heading from "./components/Heading";
 import Link from "next/link";
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
 	const reviews = await getReviews(4);
 	console.log(
-		`[Rendering] ${reviews.map((review) => review.slug).join(", ")}`
+		`[HomePage] Rendering ${reviews
+			.map((review) => review.slug)
+			.join(", ")}`
 	);
 	return (
 		<>
