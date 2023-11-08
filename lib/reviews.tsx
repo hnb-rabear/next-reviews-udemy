@@ -1,7 +1,8 @@
 import { marked } from "marked";
 import qs from "qs";
 
-const CMS_URL = "http://localhost:1337";
+export const CMS_URL = "http://localhost:1337";
+export const CACHE_TAG_REVIEW = "review";
 
 // export async function getFeaturedReview() {
 // 	var reviews = getReviews(1);
@@ -69,7 +70,8 @@ async function fetchReviews(params) {
 	const response = await fetch(url, {
 		// cache: "no-store",
 		next: {
-			revalidate: 600,
+			// revalidate: 600,
+			tags: [CACHE_TAG_REVIEW],
 		},
 	});
 	if (!response.ok) {
