@@ -1,4 +1,5 @@
 import { readFile } from "node:fs/promises";
+import { notFound } from "next/navigation";
 import Heading from "@/app/components/Heading";
 import { getReview, getSlugs } from "@/lib/reviews";
 import ShareLinkButton from "@/app/components/ShareLinkButton";
@@ -16,6 +17,9 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata(props) {
 	const review = await getReview(props.params.slug);
+	if (!review) {
+		notFound();
+	}
 	return {
 		title: review.title,
 	};
@@ -25,6 +29,9 @@ const ReviewPage = async (props) => {
 	const slug = props.params.slug;
 	console.log(`[ReviewPage] Rendering ${slug}`);
 	const review = await getReview(slug);
+	if (!review) {
+		notFound();
+	}
 	return (
 		<>
 			<Heading>{review.title}</Heading>

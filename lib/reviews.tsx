@@ -41,6 +41,7 @@ export async function getReview(slug) {
 			withCount: false,
 		},
 	});
+	if (data.length === 0) return null;
 	const item = data[0];
 	return {
 		...toReview(item),
