@@ -66,7 +66,12 @@ async function fetchReviews(params) {
 	const url =
 		`${CMS_URL}/api/reviews?` +
 		qs.stringify(params, { encodeValuesOnly: true });
-	const response = await fetch(url);
+	const response = await fetch(url, {
+		// cache: "no-store",
+		next: {
+			revalidate: 600,
+		},
+	});
 	if (!response.ok) {
 		throw new Error(`HTTP error! status: ${response.status} for ${url}`);
 	}
