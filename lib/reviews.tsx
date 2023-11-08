@@ -33,13 +33,12 @@ export const CACHE_TAG_REVIEW = "review";
 // }
 
 export async function getReview(slug) {
-	const { data } = await fetchReviews({
+	const { data, meta } = await fetchReviews({
 		filters: { slug: { $eq: slug } },
 		fields: ["slug", "title", "subtitle", "publishedAt", "body"],
 		populate: { image: { fields: ["url"] } },
 		pagination: {
 			pageSize: 1,
-			withCount: false,
 		},
 	});
 	if (data.length === 0) return null;
@@ -50,16 +49,20 @@ export async function getReview(slug) {
 	};
 }
 
-export async function getReviews(pageSize) {
-	const { data } = await fetchReviews({
+export async function getReviews(pageSize, page) {
+	const { data, meta } = await fetchReviews({
 		fields: ["slug", "title", "subtitle", "publishedAt"],
 		populate: { image: { fields: ["url"] } },
 		sort: ["publishedAt:desc"],
 		pagination: {
-			pageSize: pageSize,
+			pageSize,
+			page,
 		},
 	});
-	const results = data.map(toReview);
+	const results = {
+		reviews: data.map(toReview),
+		pageCount: meta.pagination.pageCount,
+	};
 	return results;
 }
 

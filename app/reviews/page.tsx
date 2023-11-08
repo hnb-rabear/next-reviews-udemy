@@ -2,13 +2,22 @@ import Link from "next/link";
 import Image from "next/image";
 import Heading from "@/app/components/Heading";
 import { getReviews } from "@/lib/reviews";
+import Pagination from "../components/Pagination";
 
 export const metadata = {
 	title: "Reviews",
 };
 
-const ReviewsPage = async () => {
-	const reviews = await getReviews(10);
+const PAGE_SIZE = 10;
+
+const ReviewsPage = async ({ searchParams }) => {
+	const { reviews, pageCount } = await getReviews(
+		PAGE_SIZE,
+		searchParams.page
+	);
+
+	const page = parsePageParam(searchParams.page, pageCount);
+
 	console.log(
 		`[ReviewPage] Rendering ${reviews
 			.map((review) => review.slug)
@@ -18,6 +27,7 @@ const ReviewsPage = async () => {
 	return (
 		<>
 			<Heading>Reviews</Heading>
+			<Pagination href="/reviews" page={page} pageCount={pageCount} />
 			<ul className="flex flex-row flex-wrap gap-3">
 				{reviews.map((review, index) => (
 					<li
@@ -49,7 +59,21 @@ const ReviewsPage = async () => {
 					</li>
 				))}
 			</ul>
+			<div className="mt-3">
+				<Pagination href="/reviews" page={page} pageCount={pageCount} />
+			</div>
 		</>
 	);
 };
+
+function parsePageParam(paramValue, maxValue) {
+	if (paramValue) {
+		const parsedValue = parseInt(paramValue, 10);
+		if (isFinite(parsedValue) && paramValue > 0) {
+			return parsedValue > maxValue ? maxValue : parsedValue;
+		}
+	}
+	return 1;
+}
+
 export default ReviewsPage;

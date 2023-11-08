@@ -7,8 +7,9 @@ const url = "http://localhost:1337/api/reviews"
         fields: ["slug", "title", "subtitle", "publishedAt", "body"],
         populate: { image: { fields: ["url"] } },
         pagination: {
-            pageSize: 1,
-            withCount: false
+            pageSize: 6,
+            page: 1,
+            withCount: true
         }
     }, { encodeValuesOnly: true });
 const response = await fetch(url);

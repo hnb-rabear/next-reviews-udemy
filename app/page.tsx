@@ -3,8 +3,10 @@ import Heading from "./components/Heading";
 import Link from "next/link";
 import Image from "next/image";
 
+const PAGE_SIZE = 4;
+
 export default async function HomePage() {
-	const reviews = await getReviews(4);
+	const { reviews, pageCount } = await getReviews(PAGE_SIZE, 1);
 	console.log(
 		`[HomePage] Rendering ${reviews
 			.map((review) => review.slug)
