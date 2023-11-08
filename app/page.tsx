@@ -3,7 +3,9 @@ import Heading from "./components/Heading";
 import Link from "next/link";
 import Image from "next/image";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
+
+export const revalidate = 3600;
 
 export default async function HomePage() {
 	const reviews = await getReviews(4);

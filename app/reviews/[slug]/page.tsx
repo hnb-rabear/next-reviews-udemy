@@ -6,14 +6,14 @@ import ShareLinkButton from "@/app/components/ShareLinkButton";
 import Image from "next/image";
 
 // export const dynamicParams = true;
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
-// export async function generateStaticParams() {
-// 	const slugs = await getSlugs();
-// 	return slugs.map((slug) => ({
-// 		slug,
-// 	}));
-// }
+export async function generateStaticParams() {
+	const slugs = await getSlugs();
+	return slugs.map((slug) => ({
+		slug,
+	}));
+}
 
 export async function generateMetadata(props) {
 	const review = await getReview(props.params.slug);
