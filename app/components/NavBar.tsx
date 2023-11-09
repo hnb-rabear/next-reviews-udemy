@@ -1,34 +1,26 @@
 import Link from "next/link";
 import Heading from "./Heading";
+import NavLink from "./NavLink";
 
 const NavBar = () => {
 	return (
 		<>
 			<nav>
 				<ul className="flex gap-2">
-					<li>
-						<Link
-							href="/"
-							className="font-orbitron text-orange-800 hover:underline"
-						>
+					<li className="font-bold font-orbitron capitalize">
+						<NavLink href={"/"} prefetch={false}>
 							RadevBear blog
-						</Link>
+						</NavLink>
 					</li>
-					<li className="ml-auto">
-						<Link
-							href="/reviews"
-							className="font-orbitron text-orange-800 hover:underline"
-						>
+					<li className="ml-auto capitalize">
+						<NavLink href="/reviews" prefetch={false}>
 							Reviews
-						</Link>
+						</NavLink>
 					</li>
-					<li>
-						<Link
-							href="/about"
-							className="font-orbitron text-orange-800 hover:underline"
-						>
+					<li className="capitalize">
+						<NavLink href="/about" prefetch={false}>
 							About
-						</Link>
+						</NavLink>
 					</li>
 				</ul>
 			</nav>
