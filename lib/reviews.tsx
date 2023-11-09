@@ -118,11 +118,14 @@ export async function getSearchableReviews() {
 
 export async function searchReviews(query) {
 	const { data } = await fetchReviews({
-		filters: { title: { $contains: query } },
+		filters: {
+			title: { $contains: query },
+			slug: { $contains: query },
+		},
 		fields: ["slug", "title"],
 		sort: ["title"],
 		pagination: {
-			pageSize: 10,
+			pageSize: 7,
 		},
 	});
 	return data.map((item) => ({
