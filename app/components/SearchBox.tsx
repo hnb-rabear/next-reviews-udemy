@@ -3,6 +3,7 @@ import { Combobox } from "@headlessui/react";
 import { useEffect, useState } from "react";
 import { useIsClient } from "@/lib/hook";
 import { useRouter } from "next/navigation";
+import { searchReviews } from "@/lib/reviews";
 
 // const reviews = [
 // 	{ slug: "subnautica-23", title: "Subnautica Update 3" },
@@ -17,10 +18,23 @@ import { useRouter } from "next/navigation";
 // 	{ slug: "subnautica", title: "Subnautica" },
 // ];
 
-export const SearchBox = ({ reviews }) => {
+export const SearchBox = () => {
 	const router = useRouter();
 	const isClient = useIsClient();
 	const [query, setQuery] = useState("");
+	const [reviews, setReviews] = useState([]);
+
+	useEffect(() => {
+		if (query.length > 1) {
+			const search = async () => {
+				const reviews = await searchReviews(query);
+				setReviews(reviews);
+			};
+			search();
+		} else {
+			setReviews([]);
+		}
+	}, [query]);
 
 	// do not render on the server
 	if (!isClient) {
@@ -31,9 +45,9 @@ export const SearchBox = ({ reviews }) => {
 		router.push("/reviews/" + review.slug);
 	};
 
-	const filtered = reviews
-		.filter((review) => review.title.includes(query))
-		.slice(0, 10);
+	// const filtered = reviews
+	// 	.filter((review) => review.title.includes(query))
+	// 	.slice(0, 10);
 
 	// render on the client
 	return (
@@ -46,7 +60,7 @@ export const SearchBox = ({ reviews }) => {
 					value={query}
 				/>
 				<Combobox.Options className="absolute bg-white">
-					{filtered.map((review) => (
+					{reviews.map((review) => (
 						<Combobox.Option key={review.slug} value={review}>
 							{({ active }) => (
 								<span

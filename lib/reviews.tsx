@@ -116,6 +116,21 @@ export async function getSearchableReviews() {
 	}));
 }
 
+export async function searchReviews(query) {
+	const { data } = await fetchReviews({
+		filters: { title: { $contains: query } },
+		fields: ["slug", "title"],
+		sort: ["title"],
+		pagination: {
+			pageSize: 10,
+		},
+	});
+	return data.map((item) => ({
+		slug: item.attributes.slug,
+		title: item.attributes.title,
+	}));
+}
+
 function toReview(item) {
 	const { attributes } = item;
 	return {

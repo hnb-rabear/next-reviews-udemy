@@ -34,7 +34,7 @@ const ReviewsPage = async ({ searchParams }) => {
 		<>
 			<Heading>Reviews</Heading>
 			<div className="flex justify-between items-center">
-				<SearchBox reviews={searchableReviews} />
+				<SearchBox />
 				<Pagination href="/reviews" page={page} pageCount={pageCount} />
 			</div>
 			<ul className="flex flex-row flex-wrap gap-3 pt-2">
