@@ -9,7 +9,7 @@ const NavBar = () => {
 				<ul className="flex gap-2">
 					<li className="font-bold font-orbitron capitalize">
 						<NavLink href={"/"} prefetch={false}>
-							RadevBear blog
+							RadBear Unity Blog
 						</NavLink>
 					</li>
 					<li className="ml-auto capitalize">

@@ -24,6 +24,10 @@ const ReviewsPage = async ({ searchParams }) => {
 			.map((review) => review.slug)
 			.join(", ")}`
 	);
+	// console.log(
+	// 	"reviews: ",
+	// 	reviews.map(({ slug, title }) => ({ slug, title }))
+	// );
 
 	return (
 		<>
@@ -32,7 +36,7 @@ const ReviewsPage = async ({ searchParams }) => {
 				<SearchBox />
 				<Pagination href="/reviews" page={page} pageCount={pageCount} />
 			</div>
-			<ul className="flex flex-row flex-wrap gap-3">
+			<ul className="flex flex-row flex-wrap gap-3 pt-2">
 				{reviews.map((review, index) => (
 					<li
 						key={review.title}
