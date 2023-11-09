@@ -45,7 +45,7 @@ const ReviewsPage = async ({ searchParams }) => {
 								alt={review.title}
 								width={320}
 								height={180}
-								className="rounded-t sm:rounded-l sm:rounded-t-none"
+								className="rounded-t sm:rounded-l sm:rounded-r-none"
 							></Image>
 							<div className="px-2 py-1 text-center sm:text-left">
 								<p className="font-orbitron py-1">
