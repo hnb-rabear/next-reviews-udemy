@@ -4,20 +4,20 @@ import { useEffect, useState } from "react";
 import { useIsClient } from "@/lib/hook";
 import { useRouter } from "next/navigation";
 
-const reviews = [
-	{ slug: "subnautica-23", title: "Subnautica Update 3" },
-	{ slug: "hades-2018", title: "Hades" },
-	{ slug: "fall-guys", title: "Fall Guys: Ultimate Knockout" },
-	{ slug: "black-mesa", title: "Black Mesa" },
-	{ slug: "disco-elysium", title: "Disco Elysium" },
-	{ slug: "dead-cells", title: "Dead Cells" },
-	{ slug: "a-way-out-2018", title: "A Way Out" },
-	{ slug: "warhammer-vermintide-2", title: "Warhammer: Vermintide 2" },
-	{ slug: "celeste", title: "Celeste" },
-	{ slug: "subnautica", title: "Subnautica" },
-];
+// const reviews = [
+// 	{ slug: "subnautica-23", title: "Subnautica Update 3" },
+// 	{ slug: "hades-2018", title: "Hades" },
+// 	{ slug: "fall-guys", title: "Fall Guys: Ultimate Knockout" },
+// 	{ slug: "black-mesa", title: "Black Mesa" },
+// 	{ slug: "disco-elysium", title: "Disco Elysium" },
+// 	{ slug: "dead-cells", title: "Dead Cells" },
+// 	{ slug: "a-way-out-2018", title: "A Way Out" },
+// 	{ slug: "warhammer-vermintide-2", title: "Warhammer: Vermintide 2" },
+// 	{ slug: "celeste", title: "Celeste" },
+// 	{ slug: "subnautica", title: "Subnautica" },
+// ];
 
-export const SearchBox = () => {
+export const SearchBox = ({ reviews }) => {
 	const router = useRouter();
 	const isClient = useIsClient();
 	const [query, setQuery] = useState("");
@@ -31,7 +31,9 @@ export const SearchBox = () => {
 		router.push("/reviews/" + review.slug);
 	};
 
-	const filtered = reviews.filter((review) => review.title.includes(query));
+	const filtered = reviews
+		.filter((review) => review.title.includes(query))
+		.slice(0, 10);
 
 	// render on the client
 	return (

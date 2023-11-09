@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Heading from "@/app/components/Heading";
-import { getReviews } from "@/lib/reviews";
+import { getReviews, getSearchableReviews } from "@/lib/reviews";
 import Pagination from "../components/Pagination";
 import SearchBox from "../components/SearchBox";
 
@@ -16,6 +16,7 @@ const ReviewsPage = async ({ searchParams }) => {
 		PAGE_SIZE,
 		searchParams.page
 	);
+	const searchableReviews = await getSearchableReviews();
 
 	const page = parsePageParam(searchParams.page, pageCount);
 
@@ -33,7 +34,7 @@ const ReviewsPage = async ({ searchParams }) => {
 		<>
 			<Heading>Reviews</Heading>
 			<div className="flex justify-between items-center">
-				<SearchBox />
+				<SearchBox reviews={searchableReviews} />
 				<Pagination href="/reviews" page={page} pageCount={pageCount} />
 			</div>
 			<ul className="flex flex-row flex-wrap gap-3 pt-2">
