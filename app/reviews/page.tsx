@@ -3,6 +3,7 @@ import Image from "next/image";
 import Heading from "@/app/components/Heading";
 import { getReviews } from "@/lib/reviews";
 import Pagination from "../components/Pagination";
+import SearchBox from "../components/SearchBox";
 
 export const metadata = {
 	title: "Reviews",
@@ -27,7 +28,10 @@ const ReviewsPage = async ({ searchParams }) => {
 	return (
 		<>
 			<Heading>Reviews</Heading>
-			<Pagination href="/reviews" page={page} pageCount={pageCount} />
+			<div className="flex justify-between items-center">
+				<SearchBox />
+				<Pagination href="/reviews" page={page} pageCount={pageCount} />
+			</div>
 			<ul className="flex flex-row flex-wrap gap-3">
 				{reviews.map((review, index) => (
 					<li
@@ -59,7 +63,7 @@ const ReviewsPage = async ({ searchParams }) => {
 					</li>
 				))}
 			</ul>
-			<div className="mt-3">
+			<div className="mt-3 flex justify-end">
 				<Pagination href="/reviews" page={page} pageCount={pageCount} />
 			</div>
 		</>
