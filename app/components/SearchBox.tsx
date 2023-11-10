@@ -3,7 +3,6 @@ import { Combobox } from "@headlessui/react";
 import { useEffect, useState } from "react";
 import { useIsClient } from "@/lib/hook";
 import { useRouter } from "next/navigation";
-import { searchReviews } from "@/lib/reviews";
 
 // const reviews = [
 // 	{ slug: "subnautica-23", title: "Subnautica Update 3" },
@@ -27,8 +26,11 @@ export const SearchBox = () => {
 	useEffect(() => {
 		if (query.length > 1) {
 			const search = async () => {
-				const reviews = await searchReviews(query);
-				setReviews(reviews);
+				const response = await fetch(
+					`api/search?query=${encodeURIComponent(query)}`
+				);
+				const rr = await response.json();
+				setReviews(rr);
 			};
 			search();
 		} else {

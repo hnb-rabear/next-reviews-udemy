@@ -1,5 +1,6 @@
 import { marked } from "marked";
 import qs from "qs";
+import "server-only";
 
 export const CMS_URL = "http://localhost:1337";
 export const CACHE_TAG_REVIEW = "review";
