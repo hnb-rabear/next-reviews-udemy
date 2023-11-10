@@ -25,14 +25,17 @@ export const SearchBox = () => {
 
 	useEffect(() => {
 		if (query.length > 1) {
+			const controller = new AbortController();
 			const search = async () => {
-				const response = await fetch(
-					`api/search?query=${encodeURIComponent(query)}`
-				);
+				const url = `api/search?query=${encodeURIComponent(query)}`;
+				const response = await fetch(url, {
+					signal: controller.signal,
+				});
 				const rr = await response.json();
 				setReviews(rr);
 			};
 			search();
+			return () => controller.abort();
 		} else {
 			setReviews([]);
 		}
