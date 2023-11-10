@@ -4,6 +4,7 @@ import qs from 'qs';
 const url = "http://localhost:1337/api/reviews"
     + "?" + qs.stringify({
         fields: ["slug", "title"],
+        sort: ['title:asc'],
         pagination: {
             pageSize: 1000,
             page: 1,
