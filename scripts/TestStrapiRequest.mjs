@@ -15,5 +15,5 @@ const url = "http://localhost:1337/api/reviews"
 const response = await fetch(url);
 const body = await response.json();
 const fomratted = JSON.stringify(body, null, 2);
-const file = 'scripts/strapi-response.json';
+const file = 'scripts/StrapiResponse.json';
 writeFileSync(file, fomratted, "utf-8");
