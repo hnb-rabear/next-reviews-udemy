@@ -117,6 +117,18 @@ export async function getSearchableReviews() {
 	}));
 }
 
+// const reviews = [
+// 	{ slug: "subnautica-23", title: "Subnautica Update 3" },
+// 	{ slug: "hades-2018", title: "Hades" },
+// 	{ slug: "fall-guys", title: "Fall Guys: Ultimate Knockout" },
+// 	{ slug: "black-mesa", title: "Black Mesa" },
+// 	{ slug: "disco-elysium", title: "Disco Elysium" },
+// 	{ slug: "dead-cells", title: "Dead Cells" },
+// 	{ slug: "a-way-out-2018", title: "A Way Out" },
+// 	{ slug: "warhammer-vermintide-2", title: "Warhammer: Vermintide 2" },
+// 	{ slug: "celeste", title: "Celeste" },
+// 	{ slug: "subnautica", title: "Subnautica" },
+// ];
 export async function searchReviews(query) {
 	const { data } = await fetchReviews({
 		filters: {

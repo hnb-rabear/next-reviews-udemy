@@ -3,31 +3,22 @@ import { Combobox } from "@headlessui/react";
 import { useEffect, useState } from "react";
 import { useIsClient } from "@/lib/hook";
 import { useRouter } from "next/navigation";
-
-// const reviews = [
-// 	{ slug: "subnautica-23", title: "Subnautica Update 3" },
-// 	{ slug: "hades-2018", title: "Hades" },
-// 	{ slug: "fall-guys", title: "Fall Guys: Ultimate Knockout" },
-// 	{ slug: "black-mesa", title: "Black Mesa" },
-// 	{ slug: "disco-elysium", title: "Disco Elysium" },
-// 	{ slug: "dead-cells", title: "Dead Cells" },
-// 	{ slug: "a-way-out-2018", title: "A Way Out" },
-// 	{ slug: "warhammer-vermintide-2", title: "Warhammer: Vermintide 2" },
-// 	{ slug: "celeste", title: "Celeste" },
-// 	{ slug: "subnautica", title: "Subnautica" },
-// ];
+import { useDebounce } from "use-debounce";
 
 export const SearchBox = () => {
 	const router = useRouter();
 	const isClient = useIsClient();
 	const [query, setQuery] = useState("");
 	const [reviews, setReviews] = useState([]);
+	const [debounceQuery] = useDebounce(query, 400);
 
 	useEffect(() => {
-		if (query.length > 1) {
+		if (debounceQuery.length > 1) {
 			const controller = new AbortController();
 			const search = async () => {
-				const url = `api/search?query=${encodeURIComponent(query)}`;
+				const url = `api/search?query=${encodeURIComponent(
+					debounceQuery
+				)}`;
 				const response = await fetch(url, {
 					signal: controller.signal,
 				});
@@ -39,7 +30,7 @@ export const SearchBox = () => {
 		} else {
 			setReviews([]);
 		}
-	}, [query]);
+	}, [debounceQuery]);
 
 	// do not render on the server
 	if (!isClient) {
