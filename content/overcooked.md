@@ -1,7 +1,7 @@
 ---
 slug: overcooked
-title: Overcooked
-subtitle: A Delightfully Chaotic Culinary Adventure
+title: "Overcooked"
+subtitle: "A Delightfully Chaotic Culinary Adventure"
 image: /uploads/overcooked_440c5e7337.jpg
 publishedAt: 2023-05-14
 createdAt: 2023-05-14

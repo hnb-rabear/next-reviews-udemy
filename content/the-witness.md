@@ -1,7 +1,7 @@
 ---
 slug: the-witness
-title: The Witness
-subtitle: A Mesmerizing Puzzle Adventure
+title: "The Witness"
+subtitle: "A Mesmerizing Puzzle Adventure"
 image: /uploads/the_witness_e0d8420e38.jpg
 publishedAt: 2023-05-05
 createdAt: 2023-05-05

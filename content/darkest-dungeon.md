@@ -1,7 +1,7 @@
 ---
 slug: darkest-dungeon
-title: Darkest Dungeon
-subtitle: Delve into the Abyss of Madness
+title: "Darkest Dungeon"
+subtitle: "Delve into the Abyss of Madness"
 image: /uploads/darkest_dungeon_342647bf23.jpg
 publishedAt: 2023-05-04
 createdAt: 2023-05-04

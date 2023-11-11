@@ -1,7 +1,7 @@
 ---
 slug: layers-of-fear
-title: Layers of Fear
-subtitle: An Enthralling Descent into Madness
+title: "Layers of Fear"
+subtitle: "An Enthralling Descent into Madness"
 image: /uploads/layers_of_fear_5c71de35ec.jpg
 publishedAt: 2023-05-07
 createdAt: 2023-05-07

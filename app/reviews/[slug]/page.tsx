@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { notFound } from "next/navigation";
 import Heading from "@/app/components/Heading";
-import { getReview, getSlugs } from "@/lib/reviews";
+import { getReview, getSlugs } from "@/lib/reviewsStatic";
 import ShareLinkButton from "@/app/components/ShareLinkButton";
 import Image from "next/image";
 

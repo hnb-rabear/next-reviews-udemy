@@ -1,7 +1,7 @@
 ---
 slug: dont-starve-together
-title: Don't Starve Together
-subtitle: Survive Together or Perish Alone
+title: "Don't Starve Together"
+subtitle: "Survive Together or Perish Alone"
 image: /uploads/dont_starve_together_11e6d2baed.jpg
 publishedAt: 2023-05-11
 createdAt: 2023-05-11

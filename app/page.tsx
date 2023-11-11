@@ -1,7 +1,7 @@
-import { getReviews } from "@/lib/reviews";
 import Heading from "./components/Heading";
 import Link from "next/link";
 import Image from "next/image";
+import { getReviews } from "@/lib/reviewsStatic";
 
 const PAGE_SIZE = 4;
 

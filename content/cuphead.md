@@ -1,7 +1,7 @@
 ---
 slug: cuphead
-title: Cuphead
-subtitle: A Challenging and Visually Stunning Ode to Classic Animation
+title: "Cuphead"
+subtitle: "A Challenging and Visually Stunning Ode to Classic Animation"
 image: /uploads/cuphead_14fced8b9a.jpg
 publishedAt: 2023-05-19
 createdAt: 2023-05-19

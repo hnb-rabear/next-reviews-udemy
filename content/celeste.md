@@ -1,7 +1,7 @@
 ---
 slug: celeste
-title: Celeste
-subtitle: A Masterpiece of Platforming and Emotional Resilience
+title: "Celeste"
+subtitle: "A Masterpiece of Platforming and Emotional Resilience"
 image: /uploads/celeste_3c79fbc678.jpg
 publishedAt: 2023-05-21
 createdAt: 2023-05-21

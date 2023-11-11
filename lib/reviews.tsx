@@ -5,34 +5,6 @@ import "server-only";
 export const CMS_URL = process.env.CMS_URL;
 export const CACHE_TAG_REVIEW = "review";
 
-// export async function getFeaturedReview() {
-// 	var reviews = getReviews(1);
-// 	return await getReview(reviews[0]);
-// }
-
-// export async function getReview(name: string) {
-// 	const text = await readFile(`./content/reviews/${name}.md`, "utf-8");
-// 	const {
-// 		content,
-// 		data: { title, date, image, slug },
-// 	} = matter(text);
-// 	const body = marked(content);
-// 	return { slug, title, date, image, body };
-// }
-
-// export async function getReviews() {
-// 	const slugs = await getSlugs();
-// 	const reviews = [];
-// 	for (const slug of slugs) {
-// 		const review = await getReview(slug);
-// 		review.slug = slug;
-// 		reviews.push(review);
-// 	}
-// 	// sort reviews by most recent first
-// 	reviews.sort((a, b) => b.date.localeCompare(a.date));
-// 	return reviews;
-// }
-
 export async function getReview(slug) {
 	const { data, meta } = await fetchReviews({
 		filters: { slug: { $eq: slug } },
@@ -83,14 +55,6 @@ async function fetchReviews(params) {
 	}
 	return await response.json();
 }
-
-// export async function getSlugs() {
-// 	const files = await readdir("./content/reviews/");
-// 	const slugs = files
-// 		.filter((f) => f.endsWith(".md"))
-// 		.map((f) => f.slice(0, -".md".length));
-// 	return slugs;
-// }
 
 export async function getSlugs() {
 	const { data } = await fetchReviews({

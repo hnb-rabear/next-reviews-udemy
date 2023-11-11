@@ -5,6 +5,7 @@
 		"@headlessui/react": "^1.7.17",
 		"@heroicons/react": "^2.0.18",
 		"gray-matter": "^4.0.3",
+		"grey-matter": "^0.0.0",
 		"marked": "^9.1.5",
 		"next": "^14.0.1",
 		"qs": "^6.11.2",

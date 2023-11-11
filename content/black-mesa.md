@@ -1,7 +1,7 @@
 ---
 slug: black-mesa
-title: Black Mesa
-subtitle: A Masterful Reimagining of a Gaming Classic
+title: "Black Mesa"
+subtitle: "A Masterful Reimagining of a Gaming Classic"
 image: /uploads/black_mesa_f27df07b74.jpg
 publishedAt: 2023-05-26
 createdAt: 2023-05-26

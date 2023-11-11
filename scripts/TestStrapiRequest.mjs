@@ -40,8 +40,8 @@ async function generateMdData() {
             `content/${slug}.md`,
             `---
 slug: ${slug}
-title: ${title}
-subtitle: ${subtitle}
+title: "${title}"
+subtitle: "${subtitle}"
 image: ${image}
 publishedAt: ${publishedAt}
 createdAt: ${createdAt}

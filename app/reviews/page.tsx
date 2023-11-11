@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Heading from "@/app/components/Heading";
-import { getReviews } from "@/lib/reviews";
+import { getReviews } from "@/lib/reviewsStatic";
 import Pagination from "../components/Pagination";
 import SearchBox from "../components/SearchBox";
 

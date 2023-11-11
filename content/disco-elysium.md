@@ -1,7 +1,7 @@
 ---
 slug: disco-elysium
-title: Disco Elysium
-subtitle: A Mind-Bending Masterpiece of Narrative Brilliance
+title: "Disco Elysium"
+subtitle: "A Mind-Bending Masterpiece of Narrative Brilliance"
 image: /uploads/disco_elysium_897a229c9a.jpg
 publishedAt: 2023-05-25
 createdAt: 2023-05-25

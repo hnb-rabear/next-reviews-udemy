@@ -1,7 +1,7 @@
 ---
 slug: fall-guys
-title: Fall Guys: Ultimate Knockout
-subtitle: A Whimsical Party Game for Endless Fun
+title: "Fall Guys: Ultimate Knockout"
+subtitle: "A Whimsical Party Game for Endless Fun"
 image: /uploads/fall_guys_9f9b386677.jpg
 publishedAt: 2023-05-27
 createdAt: 2023-05-27
