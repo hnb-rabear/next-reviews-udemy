@@ -53,11 +53,10 @@ export async function getSearchableReviews() {
 }
 
 export async function searchReviews(query, limit = 10) {
-	const result = searchData.filter((item, index) => {
-		return (
-			(item.slug.includes(query) || item.title.includes(query)) &&
-			index < limit
-		);
-	});
+	const result = searchData
+		.filter(
+			(item) => item.slug.includes(query) || item.title.includes(query)
+		)
+		.slice(0, limit);
 	return result;
 }
