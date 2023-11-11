@@ -2,7 +2,7 @@
 slug: hades-2018
 title: "Hades"
 subtitle: "A Rogue-Like Gem that Ascends to Greatness"
-image: /uploads/hades_2018_bff8e28a82.jpg
+image: /uploads/hades-2018.png
 publishedAt: 2023-05-28
 createdAt: 2023-05-28
 updatedAt: 2023-05-28

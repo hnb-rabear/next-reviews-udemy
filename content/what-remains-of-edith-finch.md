@@ -2,7 +2,7 @@
 slug: what-remains-of-edith-finch
 title: "What Remains of Edith Finch"
 subtitle: "An Emotionally Captivating Masterpiece"
-image: /uploads/what_remains_of_edith_finch_b4f0be5dda.jpg
+image: /uploads/what-remains-of-edith-finch.png
 publishedAt: 2023-05-17
 createdAt: 2023-05-17
 updatedAt: 2023-05-17

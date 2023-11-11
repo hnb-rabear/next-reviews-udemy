@@ -1,4 +1,3 @@
-import { readFile } from "node:fs/promises";
 import { notFound } from "next/navigation";
 import Heading from "@/app/components/Heading";
 import { getReview, getSlugs } from "@/lib/reviewsStatic";
@@ -34,9 +33,10 @@ const ReviewPage = async (props) => {
 			<Heading>{review.title}</Heading>
 			<p className="font-semibold pb-3">{review.subtitle}</p>
 			<div className="flex gap-3 items-baseline">
-				<p className="italic text-sm">{review.date}</p>
+				<p className="italic text-sm">{review.date.toString()}</p>
 				<ShareLinkButton />
 			</div>
+			{review.image}
 			<Image
 				src={review.image}
 				alt={review.title}

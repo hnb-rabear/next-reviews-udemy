@@ -2,7 +2,7 @@
 slug: warhammer-vermintide-2
 title: "Warhammer: Vermintide 2"
 subtitle: "A Stunning Co-op Action Experience"
-image: /uploads/warhammer_vermintide_2_0634bcc7ee.jpg
+image: /uploads/warhammer-vermintide-2.png
 publishedAt: 2023-05-22
 createdAt: 2023-05-22
 updatedAt: 2023-05-22

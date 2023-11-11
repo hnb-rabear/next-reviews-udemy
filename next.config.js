@@ -1,21 +1,14 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-    // output: 'export',
+    // output: 'export'
     images: {
-        // loader: 'custom',
-        // loaderFilename: 'loader.js',
         remotePatterns: [
-            toRemotePattern(process.env.CMS_IMAGE_PATTERN),
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                port: '3000',
+                pathname: '/uploads/**'
+            }
         ]
     }
 };
-
-function toRemotePattern(urlString) {
-    const url = new URL(urlString);
-    return {
-        protocol: url.protocol.replace(':', ''),
-        hostname: url.hostname,
-        port: url.port,
-        pathname: url.pathname
-    };
-}

@@ -3,8 +3,6 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import searchData from "./searchData";
 
-const URL = process.env.CMS_URL;
-
 export async function getReview(name: string) {
 	const text = await readFile(`./content/${name}.md`, "utf-8");
 	const {
@@ -16,7 +14,7 @@ export async function getReview(name: string) {
 		slug,
 		title,
 		subtitle,
-		image: URL + image,
+		image: image,
 		date: publishedAt,
 		body,
 	};

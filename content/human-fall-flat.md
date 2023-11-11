@@ -2,7 +2,7 @@
 slug: human-fall-flat
 title: "Human: Fall Flat"
 subtitle: "A Hilarious and Charming Puzzle Platformer"
-image: /uploads/human_fall_flat_c7e0c87e07.jpg
+image: /uploads/human-fall-flat.png
 publishedAt: 2023-05-13
 createdAt: 2023-05-13
 updatedAt: 2023-05-13

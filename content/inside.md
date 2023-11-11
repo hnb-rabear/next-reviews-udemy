@@ -2,7 +2,7 @@
 slug: inside
 title: "INSIDE"
 subtitle: "Dive Into the Enigmatic Abyss"
-image: /uploads/inside_edd39ca199.jpg
+image: /uploads/inside.png
 publishedAt: 2023-05-12
 createdAt: 2023-05-12
 updatedAt: 2023-05-12

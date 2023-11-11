@@ -2,7 +2,7 @@
 slug: subnautica-23
 title: "Subnautica Update 3"
 subtitle: "An Oceanic Masterpiece That Plunges Players into an Immersive Underwater World"
-image: /uploads/subnautica_049e8332de.jpg
+image: /uploads/subnautica-23.png
 publishedAt: 2023-11-08
 createdAt: 2023-11-08
 updatedAt: 2023-11-08

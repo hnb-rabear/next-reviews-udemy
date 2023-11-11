@@ -58,6 +58,7 @@ const ReviewsPage = async ({ searchParams }) => {
 								<p className="text-slate-500 hidden pt-2 sm:block">
 									{review.subtitle}
 								</p>
+								<p>{review.image}</p>
 							</div>
 						</Link>
 					</li>

@@ -2,7 +2,7 @@
 slug: subnautica
 title: "Subnautica"
 subtitle: "An Oceanic Masterpiece That Plunges Players into an Immersive Underwater World"
-image: /uploads/subnautica_049e8332de.jpg
+image: /uploads/subnautica.png
 publishedAt: 2023-05-20
 createdAt: 2023-05-20
 updatedAt: 2023-05-20

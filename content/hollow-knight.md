@@ -2,7 +2,7 @@
 slug: hollow-knight
 title: "Hollow Knight"
 subtitle: "A Sublime Journey Through an Enigmatic World"
-image: /uploads/hollow_knight_da5257a59c.jpg
+image: /uploads/hollow-knight.png
 publishedAt: 2023-05-16
 createdAt: 2023-05-16
 updatedAt: 2023-05-16

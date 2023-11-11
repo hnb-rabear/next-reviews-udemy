@@ -2,7 +2,7 @@
 slug: superhot
 title: "SUPERHOT"
 subtitle: "An Innovative and Immersive Time-Bending Thriller"
-image: /uploads/superhot_ee1bcf99b0.jpg
+image: /uploads/superhot.png
 publishedAt: 2023-05-08
 createdAt: 2023-05-08
 updatedAt: 2023-05-08

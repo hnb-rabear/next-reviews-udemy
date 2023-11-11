@@ -2,7 +2,7 @@
 slug: no-mans-sky
 title: "No Man's Sky"
 subtitle: "Exploring the Cosmos"
-image: /uploads/no_mans_sky_9e1fd60de1.jpg
+image: /uploads/no-mans-sky.png
 publishedAt: 2023-05-15
 createdAt: 2023-05-15
 updatedAt: 2023-05-15

@@ -2,7 +2,7 @@
 slug: a-way-out-2018
 title: "A Way Out"
 subtitle: "A Riveting Co-op Adventure That Pushes Boundaries"
-image: /uploads/a_way_out_2018_8efe22cb7f.jpg
+image: /uploads/a-way-out-2018.png
 publishedAt: 2023-05-23
 createdAt: 2023-05-23
 updatedAt: 2023-05-23

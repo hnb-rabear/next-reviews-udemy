@@ -2,7 +2,7 @@
 slug: stardew-valley
 title: "Stardew Valley"
 subtitle: "A Tranquil Oasis of Farming and Adventure"
-image: /uploads/stardew_valley_a268200e49.jpg
+image: /uploads/stardew-valley.png
 publishedAt: 2023-05-09
 createdAt: 2023-05-09
 updatedAt: 2023-05-09

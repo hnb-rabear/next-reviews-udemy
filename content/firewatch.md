@@ -2,7 +2,7 @@
 slug: firewatch
 title: "Firewatch"
 subtitle: "A Captivating Journey through Solitude and Mystery"
-image: /uploads/firewatch_16858eafba.jpg
+image: /uploads/firewatch.png
 publishedAt: 2023-05-06
 createdAt: 2023-05-06
 updatedAt: 2023-05-06

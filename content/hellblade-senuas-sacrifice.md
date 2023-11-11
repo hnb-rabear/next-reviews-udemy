@@ -2,7 +2,7 @@
 slug: hellblade-senuas-sacrifice
 title: "Hellblade: Senua's Sacrifice"
 subtitle: "A Hauntingly Captivating Journey"
-image: /uploads/hellblade_senuas_sacrifice_56b4c7ac75.jpg
+image: /uploads/hellblade-senuas-sacrifice.png
 publishedAt: 2023-05-18
 createdAt: 2023-05-18
 updatedAt: 2023-05-18

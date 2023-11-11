@@ -2,7 +2,7 @@
 slug: ark-survival-of-the-fittest
 title: "ARK: Survival Of The Fittest"
 subtitle: "A Thrilling Battle Royale in the Prehistoric World"
-image: /uploads/ark_survival_of_the_fittest_37eebfbd52.jpg
+image: /uploads/ark-survival-of-the-fittest.png
 publishedAt: 2023-05-10
 createdAt: 2023-05-10
 updatedAt: 2023-05-10

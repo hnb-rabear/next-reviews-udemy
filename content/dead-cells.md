@@ -2,7 +2,7 @@
 slug: dead-cells
 title: "Dead Cells"
 subtitle: "An Electrifying Symphony of Rogue-like Action"
-image: /uploads/dead_cells_de459ea5a7.jpg
+image: /uploads/dead-cells.png
 publishedAt: 2023-05-24
 createdAt: 2023-05-24
 updatedAt: 2023-05-24

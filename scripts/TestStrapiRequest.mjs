@@ -42,7 +42,7 @@ async function generateMdData() {
 slug: ${slug}
 title: "${title}"
 subtitle: "${subtitle}"
-image: ${image}
+image: /uploads/${slug}.png
 publishedAt: ${publishedAt}
 createdAt: ${createdAt}
 updatedAt: ${updatedAt}
@@ -52,7 +52,7 @@ ${body}`,
             "utf-8"
         );
 
-        await downloadImage(CMS_URL + image, `public/images/${slug}.png`);
+        await downloadImage(CMS_URL + image, `public/uploads/${slug}.png`);
     });
 }
 
