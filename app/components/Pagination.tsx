@@ -1,16 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
-import { Span } from "next/dist/trace";
 import Link from "next/link";
-
-function parsePageParam(paramValue, maxValue) {
-	if (paramValue) {
-		const parsedValue = parseInt(paramValue, 10);
-		if (isFinite(parsedValue) && paramValue > 0) {
-			return parsedValue > maxValue ? maxValue : parsedValue;
-		}
-	}
-	return 1;
-}
 
 const Pagination = ({ href, page, pageCount }) => {
 	if (page > pageCount) page = pageCount;
