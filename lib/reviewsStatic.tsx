@@ -4,7 +4,7 @@ import { marked } from "marked";
 import searchData from "./searchData";
 
 export async function getReview(name: string) {
-	const text = await readFile(`./content/${name}.md`, "utf-8");
+	const text = await readFile(process.cwd() + `/content/${name}.md`, "utf-8");
 	const {
 		content,
 		data: { slug, title, subtitle, image, publishedAt },
@@ -41,7 +41,7 @@ export async function getReviews(pageSize, page = 1) {
 }
 
 export async function getSlugs() {
-	const files = await readdir("./content/");
+	const files = await readdir(process.cwd() + "/content/");
 	const slugs = files
 		.filter((f) => f.endsWith(".md"))
 		.map((f) => f.slice(0, -".md".length));

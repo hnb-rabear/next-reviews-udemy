@@ -28,10 +28,10 @@ const ReviewsPage = async ({ searchParams }) => {
 	return (
 		<>
 			<Heading>Reviews</Heading>
-			{/* <div className="flex justify-between items-center">
+			<div className="flex justify-between items-center">
 				<SearchBox />
 				<Pagination href="/reviews" page={page} pageCount={pageCount} />
-			</div> */}
+			</div>
 			<ul className="flex flex-row flex-wrap gap-3 pt-2">
 				{reviews.map((review, index) => (
 					<li
@@ -63,9 +63,9 @@ const ReviewsPage = async ({ searchParams }) => {
 					</li>
 				))}
 			</ul>
-			{/* <div className="mt-3 flex justify-end">
+			<div className="mt-3 flex justify-end">
 				<Pagination href="/reviews" page={page} pageCount={pageCount} />
-			</div> */}
+			</div>
 		</>
 	);
 };
