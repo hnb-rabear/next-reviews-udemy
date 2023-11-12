@@ -36,7 +36,6 @@ const ReviewPage = async (props) => {
 				<p className="italic text-sm">{review.date.toString()}</p>
 				<ShareLinkButton />
 			</div>
-			{review.image}
 			<Image
 				src={review.image}
 				alt={review.title}

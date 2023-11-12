@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useIsClient } from "@/lib/hook";
 import { useRouter } from "next/navigation";
 import { useDebounce } from "use-debounce";
+import searchData from "@/lib/searchData";
 
 export const SearchBox = () => {
 	const router = useRouter();
@@ -14,19 +15,14 @@ export const SearchBox = () => {
 
 	useEffect(() => {
 		if (debounceQuery.length > 1) {
-			const controller = new AbortController();
-			const search = async () => {
-				const url = `api/search?query=${encodeURIComponent(
-					debounceQuery
-				)}`;
-				const response = await fetch(url, {
-					signal: controller.signal,
-				});
-				const rr = await response.json();
-				setReviews(rr);
-			};
-			search();
-			return () => controller.abort();
+			const filteredReviews = searchData
+				.filter(
+					(item) =>
+						item.slug.includes(debounceQuery) ||
+						item.title.includes(debounceQuery)
+				)
+				.slice(0, 10);
+			setReviews(filteredReviews);
 		} else {
 			setReviews([]);
 		}
@@ -40,10 +36,6 @@ export const SearchBox = () => {
 	const handleChange = (review) => {
 		router.push("/reviews/" + review.slug);
 	};
-
-	// const filtered = reviews
-	// 	.filter((review) => review.title.includes(query))
-	// 	.slice(0, 10);
 
 	// render on the client
 	return (
