@@ -12,7 +12,11 @@ export const metadata = {
 const PAGE_SIZE = 10;
 
 const ReviewsPage = async ({ searchParams }) => {
-	const { reviews, pageCount } = await getReviews(PAGE_SIZE, searchParams.page);
+	const { reviews, pageCount } = await getReviews(
+		PAGE_SIZE,
+		searchParams.page,
+		false
+	);
 
 	const page = parsePageParam(searchParams.page, pageCount);
 

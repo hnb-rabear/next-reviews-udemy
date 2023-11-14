@@ -24,8 +24,8 @@ export async function getReview(name: string) {
 }
 
 export async function fetchReview(name: string) {
-	const domain = window.location.origin;
-	const response = await fetch(`${domain}/content/${name}.md`);
+	const currentDomain = process.env.NEXT_PUBLIC_URL;
+	const response = await fetch(`${currentDomain}/content/${name}.md`);
 	const text = await response.text();
 	const {
 		content,
@@ -42,15 +42,16 @@ export async function fetchReview(name: string) {
 	};
 }
 
-export async function getReviews(pageSize, page = 1) {
-	//const slugs = await getSlugs();
-	const slugs = searchData.map((item) => item.slug);
+export async function getReviews(pageSize, page = 1, staticLoad = true) {
+	const slugs = await getSlugs();
 	const startIndex = (page - 1) * pageSize;
 	const endIndex = startIndex + pageSize;
 	const reviews = [];
 	for (let i = startIndex; i < endIndex && i < slugs.length; i++) {
 		const slug = slugs[i];
-		const review = await getReview(slug);
+		let review;
+		if (staticLoad) review = await getReview(slug);
+		else review = await fetchReview(slug);
 		review.slug = slug;
 		reviews.push(review);
 	}
@@ -64,10 +65,14 @@ export async function getReviews(pageSize, page = 1) {
 }
 
 export async function getSlugs() {
-	const files = await readdir(process.cwd() + "/public/content/");
-	const slugs = files
-		.filter((f) => f.endsWith(".md"))
-		.map((f) => f.slice(0, -".md".length));
+	// get slugs from directory
+	// const files = await readdir(process.cwd() + "/public/content/");
+	// const slugs = files
+	// 	.filter((f) => f.endsWith(".md"))
+	// 	.map((f) => f.slice(0, -".md".length));
+
+	// get slugs from searchData
+	const slugs = searchData.map((item) => item.slug);
 	return slugs;
 }
 
