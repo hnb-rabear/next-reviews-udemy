@@ -43,7 +43,8 @@ export async function fetchReview(name: string) {
 }
 
 export async function getReviews(pageSize, page = 1) {
-	const slugs = await getSlugs();
+	//const slugs = await getSlugs();
+	const slugs = searchData.map((item) => item.slug);
 	const startIndex = (page - 1) * pageSize;
 	const endIndex = startIndex + pageSize;
 	const reviews = [];
