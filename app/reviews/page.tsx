@@ -9,20 +9,15 @@ export const metadata = {
 	title: "Reviews",
 };
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 100;
 
-const ReviewsPage = async ({ searchParams }) => {
-	const { reviews, pageCount } = await getReviews(
-		PAGE_SIZE,
-		searchParams.page
-	);
+const ReviewsPage = async () => {
+	const { reviews, pageCount } = await getReviews(PAGE_SIZE, 1);
 
-	const page = parsePageParam(searchParams.page, pageCount);
+	const page = parsePageParam(1, pageCount);
 
 	console.log(
-		`[ReviewPage] Rendering ${reviews
-			.map((review) => review.slug)
-			.join(", ")}`
+		`[ReviewPage] Rendering ${reviews.map((review) => review.slug).join(", ")}`
 	);
 
 	return (
@@ -52,9 +47,7 @@ const ReviewsPage = async ({ searchParams }) => {
 								className="rounded-t sm:rounded-l sm:rounded-r-none"
 							></Image>
 							<div className="px-2 py-1 text-center sm:text-left">
-								<p className="font-orbitron py-1">
-									{review.title}
-								</p>
+								<p className="font-orbitron py-1">{review.title}</p>
 								<p className="text-slate-500 hidden pt-2 sm:block">
 									{review.subtitle}
 								</p>

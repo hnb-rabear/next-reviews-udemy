@@ -4,7 +4,29 @@ import { marked } from "marked";
 import searchData from "./searchData";
 
 export async function getReview(name: string) {
-	const text = await readFile(process.cwd() + `/content/${name}.md`, "utf-8");
+	const text = await readFile(
+		process.cwd() + `/public/content/${name}.md`,
+		"utf-8"
+	);
+	const {
+		content,
+		data: { slug, title, subtitle, image, publishedAt },
+	} = matter(text);
+	const body = marked(content);
+	return {
+		slug,
+		title,
+		subtitle,
+		image: image,
+		date: publishedAt,
+		body,
+	};
+}
+
+export async function fetchReview(name: string) {
+	const domain = window.location.origin;
+	const response = await fetch(`${domain}/content/${name}.md`);
+	const text = await response.text();
 	const {
 		content,
 		data: { slug, title, subtitle, image, publishedAt },
@@ -41,7 +63,7 @@ export async function getReviews(pageSize, page = 1) {
 }
 
 export async function getSlugs() {
-	const files = await readdir(process.cwd() + "/content/");
+	const files = await readdir(process.cwd() + "/public/content/");
 	const slugs = files
 		.filter((f) => f.endsWith(".md"))
 		.map((f) => f.slice(0, -".md".length));
@@ -54,9 +76,7 @@ export async function getSearchableReviews() {
 
 export async function searchReviews(query, limit = 10) {
 	const result = searchData
-		.filter(
-			(item) => item.slug.includes(query) || item.title.includes(query)
-		)
+		.filter((item) => item.slug.includes(query) || item.title.includes(query))
 		.slice(0, limit);
 	return result;
 }
