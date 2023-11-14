@@ -9,12 +9,12 @@ export const metadata = {
 	title: "Reviews",
 };
 
-const PAGE_SIZE = 100;
+const PAGE_SIZE = 10;
 
-const ReviewsPage = async () => {
-	const { reviews, pageCount } = await getReviews(PAGE_SIZE, 1);
+const ReviewsPage = async ({ searchParams }) => {
+	const { reviews, pageCount } = await getReviews(PAGE_SIZE, searchParams.page);
 
-	const page = parsePageParam(1, pageCount);
+	const page = parsePageParam(searchParams.page, pageCount);
 
 	console.log(
 		`[ReviewPage] Rendering ${reviews.map((review) => review.slug).join(", ")}`
