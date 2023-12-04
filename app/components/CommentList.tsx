@@ -1,15 +1,14 @@
+import { getComments } from '@/lib/comments'
 import { UserCircleIcon } from '@heroicons/react/20/solid'
 
-const comments = [
-  { id: '1', user: 'Alice 1', message: 'Love this game 1!' },
-  { id: '2', user: 'Alice 2', message: 'Love this game 2!' },
-  { id: '3', user: 'Alice 3', message: 'Love this game 3!' },
-  { id: '4', user: 'Alice 4', message: 'Love this game 4!' },
-]
-
-function CommentList() {
+async function CommentList({ slug }) {
+  const comments = await getComments(slug)
+  if (comments.length === 0) {
+    return <p className="mt-3 italic">No comments yet.</p>
+  }
   return (
     <>
+      <h3 className="text-xl font-bold">Comments</h3>
       <ul className="mt-3 rounded border">
         {comments.map((comment) => (
           <li key={comment.id} className="border-b px-3 py-2 last:border-none odd:bg-orange-100">

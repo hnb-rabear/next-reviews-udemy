@@ -57,7 +57,7 @@ const ReviewPage = async (props) => {
         </h2>
       </section>
       <CommentForm title={review.title} />
-      <CommentList />
+      <CommentList slug={review.slug} />
     </>
   )
 }
