@@ -1,14 +1,14 @@
 ---
 slug: ark-survival-of-the-fittest
-title: "ARK: Survival Of The Fittest"
-subtitle: "A Thrilling Battle Royale in the Prehistoric World"
+title: 'ARK: Survival Of The Fittest'
+subtitle: 'A Thrilling Battle Royale in the Prehistoric World'
 image: /uploads/ark-survival-of-the-fittest.png
 publishedAt: 2023-05-10
 createdAt: 2023-05-10
 updatedAt: 2023-05-10
 ---
 
-__ARK: Survival Of The Fittest__ takes the intense survival gameplay of the popular ARK: Survival Evolved and merges it with the heart-pounding action of the battle royale genre. Developed by _Studio Wildcard_, this standalone spin-off delivers an adrenaline-fueled experience set in a prehistoric world where dinosaurs roam and only the fittest can survive.
+**ARK: Survival Of The Fittest** takes the intense survival gameplay of the popular ARK: Survival Evolved and merges it with the heart-pounding action of the battle royale genre. Developed by _Studio Wildcard_, this standalone spin-off delivers an adrenaline-fueled experience set in a prehistoric world where dinosaurs roam and only the fittest can survive.
 
 From the moment you drop into the colorful and lush environment, it's clear that ARK: Survival Of The Fittest is no ordinary battle royale game. The inclusion of dinosaurs adds a unique twist, providing an extra layer of danger and excitement to each match. Whether you find yourself battling against other players or taming and riding these ancient beasts, the unpredictable encounters make for truly exhilarating gameplay.
 
