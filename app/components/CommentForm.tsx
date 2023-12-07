@@ -1,23 +1,12 @@
-import { createComment } from '@/lib/comments'
-import { revalidatePath } from 'next/cache'
-import { redirect } from 'next/navigation'
+'use client'
+import { submitComment } from '../reviews/[slug]/action'
 
 function CommentForm({ slug, title }) {
-  async function action(formData) {
-    'use server'
-    const comment = await createComment({
-      slug: slug,
-      user: formData.get('user'),
-      message: formData.get('message'),
-    })
-
-    const url = `/reviews/${slug}`
-    revalidatePath(url)
-    redirect(url)
-  }
-
   return (
-    <form action={action} className="mt-3 flex flex-col gap-2 rounded border bg-white px-3 py-2">
+    <form
+      action={submitComment}
+      className="mt-3 flex flex-col gap-2 rounded border bg-white px-3 py-2"
+    >
       <p className="pb-1">
         Already played <strong>{title}</strong>? Have your say!
       </p>
@@ -29,6 +18,8 @@ function CommentForm({ slug, title }) {
         <input
           type="userField"
           name="user"
+          required
+          maxLength={50}
           placeholder="Enter your name"
           className="w-full rounded border px-2 py-1"
         />
@@ -37,7 +28,13 @@ function CommentForm({ slug, title }) {
         <label htmlFor="messageField" className="w-32 shrink-0">
           Your comment
         </label>
-        <textarea id="messageField" name="message" className="w-full rounded border px-2 py-1" />
+        <textarea
+          id="messageField"
+          name="message"
+          required
+          maxLength={500}
+          className="w-full rounded border px-2 py-1"
+        />
       </div>
       <button
         type="submit"
