@@ -1,16 +1,19 @@
-'use client'
-
 import { createComment } from '@/lib/comments'
+import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
 function CommentForm({ slug, title }) {
   async function action(formData) {
-    'user server'
-    const user = formData.get('user')
-    const message = formData.get('message')
-    const comment = await createComment({ slug, message, user })
-    console.log(comment)
-    redirect(`/reviews/${slug}`)
+    'use server'
+    const comment = await createComment({
+      slug: slug,
+      user: formData.get('user'),
+      message: formData.get('message'),
+    })
+
+    const url = `/reviews/${slug}`
+    revalidatePath(url)
+    redirect(url)
   }
 
   return (

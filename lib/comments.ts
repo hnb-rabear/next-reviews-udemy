@@ -1,14 +1,10 @@
+import type { Comment } from '@prisma/client';
 import { db } from "./db";
 
-export async function createComment({ slug, message, user }) {
-    const comment = await db.comment.create({
-        data: {
-            slug: slug,
-            user: user,
-            message: message,
-        },
+export async function createComment({ slug, user, message }) {
+    return await db.comment.create({
+        data: { slug, user, message },
     });
-    return comment;
 }
 
 export async function getAllComments() {
@@ -19,7 +15,7 @@ export async function getAllComments() {
 export async function getComments(slug) {
     const comments = await db.comment.findMany({
         where: { slug },
-        orderby: { postedAt: "desc" },
+        orderBy: { postedAt: "desc" },
     });
     return comments;
 }
