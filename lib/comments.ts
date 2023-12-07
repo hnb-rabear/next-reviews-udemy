@@ -18,7 +18,8 @@ export async function getAllComments() {
 
 export async function getComments(slug) {
     const comments = await db.comment.findMany({
-        where: { slug: slug },
+        where: { slug },
+        orderby: { postedAt: "desc" },
     });
     return comments;
 }
