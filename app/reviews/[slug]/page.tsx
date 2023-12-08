@@ -6,6 +6,8 @@ import Image from 'next/image'
 import { ChatBubbleBottomCenterTextIcon } from '@heroicons/react/20/solid'
 import CommentList from '@/app/components/CommentList'
 import CommentForm from '@/app/components/CommentForm'
+import { Suspense } from 'react'
+import CommentListSkeleton from '@/app/components/CommentListSkeleton'
 
 export async function generateStaticParams() {
   const slugs = await getSlugs()
@@ -57,7 +59,9 @@ const ReviewPage = async (props) => {
         </h2>
       </section>
       <CommentForm slug={review.slug} title={review.title} />
-      <CommentList slug={review.slug} />
+      <Suspense fallback={<CommentListSkeleton />}>
+        <CommentList slug={review.slug} />
+      </Suspense>
     </>
   )
 }

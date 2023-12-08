@@ -2,11 +2,7 @@
 import { submitComment } from '../reviews/[slug]/action'
 import { useFormState } from '@/lib/hook'
 
-export interface CommentFormProps {
-  slug: string
-  title: string
-}
-function CommentForm({ slug, title }: CommentFormProps) {
+function CommentForm({ slug, title }: { slug: string; title: string }) {
   const [state, handleSubmit] = useFormState(submitComment)
 
   return (
