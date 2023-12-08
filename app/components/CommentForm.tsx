@@ -1,27 +1,13 @@
 'use client'
-import { useState } from 'react'
 import { submitComment } from '../reviews/[slug]/action'
+import { useFormState } from '@/lib/hook'
 
-function CommentForm({ slug, title }) {
-  const [state, setState] = useState({ loading: false, error: null })
-
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    setState({ loading: true, error: null })
-    const form: HTMLFormElement = event.currentTarget
-    const formData = new FormData(form)
-    const user = formData.get('user') as string
-    const message = formData.get('message') as string
-    // console.log('fromData', Array.from(formData.entries()))
-    const result = await submitComment({ slug, user, message })
-    if (result?.isError) {
-      setState({ loading: false, error: result.message })
-    } else {
-      form.reset()
-      setState({ loading: false, error: null })
-    }
-    return result
-  }
+export interface CommentFormProps {
+  slug: string
+  title: string
+}
+function CommentForm({ slug, title }: CommentFormProps) {
+  const [state, handleSubmit] = useFormState(submitComment)
 
   return (
     <form
@@ -57,7 +43,7 @@ function CommentForm({ slug, title }) {
           className="w-full rounded border px-2 py-1"
         />
       </div>
-      {state.error && <p className="text-red-500">{state.error}</p>}
+      {state.error && <p className="text-red-500">{state.error.message}</p>}
       <button
         type="submit"
         disabled={state.loading}
@@ -68,4 +54,5 @@ function CommentForm({ slug, title }) {
     </form>
   )
 }
+
 export default CommentForm

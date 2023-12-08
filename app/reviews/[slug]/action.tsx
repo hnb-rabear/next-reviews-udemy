@@ -1,21 +1,14 @@
 'use server'
-import { createComment } from '@/lib/comments'
+import { CreateCommentData, createComment } from '@/lib/comments'
+import { ActionError } from '@/lib/hook'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
-export async function submitComment({
-  slug,
-  user,
-  message,
-}: {
-  slug: string
-  user: string
-  message: string
-}) {
+export async function submitComment(formData: FormData): Promise<undefined | ActionError> {
   const data = {
-    slug: slug,
-    user: user,
-    message: message,
+    slug: formData.get('slug') as string,
+    user: formData.get('user') as string,
+    message: formData.get('message') as string,
   }
   const error = validate(data)
   if (error) {
@@ -28,7 +21,7 @@ export async function submitComment({
   redirect(url)
 }
 
-function validate(data): string | undefined {
+function validate(data: CreateCommentData): string | undefined {
   if (!data.user) {
     return 'Name field is required'
   }

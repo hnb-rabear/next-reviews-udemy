@@ -8,7 +8,6 @@ async function CommentList({ slug }) {
   }
   return (
     <>
-      <h3 className="text-xl font-bold">Comments</h3>
       <ul className="mt-3 rounded border">
         {comments.map((comment) => (
           <li key={comment.id} className="border-b px-3 py-2 last:border-none odd:bg-orange-100">
